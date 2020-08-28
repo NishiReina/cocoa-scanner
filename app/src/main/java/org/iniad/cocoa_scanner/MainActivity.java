@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 if(device.getId().equals(id)) {
                     device.update(rssi, now);
                     found = true;
-                } else if(device.getRecevedAt() - now > 1000 * 10) {
+                } else if(now - device.getRecevedAt() > 1000 * 10) {
                     device.invalidate();
                 }
             }
